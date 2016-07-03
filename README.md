@@ -1,5 +1,5 @@
 # Route Url Redirector Middleware for ASP.NET Core
-### A beautifully simple fluent API for preserving your link juice and traffic by redirecting legacy routes in ASP.NET Core MVC
+###### A beautifully simple fluent API for preserving your link juice and traffic by redirecting legacy routes in ASP.NET Core MVC
 
     app.UseRouteUrlRedirect(redirect =>
     {
