@@ -12,7 +12,7 @@ namespace RouteUrlRedirector
             if (configureRedirects == null)
                 throw new ArgumentNullException(nameof(configureRedirects));
 
-            return app.UseMiddleware<RequestRedirectMiddleware>(configureRedirects);
+            return app.UseMiddleware<UseRouteUrlRedirect>(configureRedirects);
         }
     }
 }

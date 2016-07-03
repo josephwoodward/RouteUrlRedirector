@@ -6,13 +6,13 @@ using RouteUrlRedirector.Configuration;
 
 namespace RouteUrlRedirector
 {
-    public class RequestRedirectMiddleware
+    public class UseRouteUrlRedirect
     {
         private readonly RequestDelegate _next;
         private readonly Action<RouteRedirectionConfiguration> _routeConfigurations;
         private IDictionary<string, RouteItem> _builtRouteItems;
 
-        public RequestRedirectMiddleware(RequestDelegate next, Action<RouteRedirectionConfiguration> routeConfigurations)
+        public UseRouteUrlRedirect(RequestDelegate next, Action<RouteRedirectionConfiguration> routeConfigurations)
         {
             _next = next;
             _routeConfigurations = routeConfigurations;
