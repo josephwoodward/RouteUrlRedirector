@@ -2,6 +2,6 @@
 {
     public interface IRouteRedirectAction
     {
-        IRouteOptions ForUrl(string beforeUrl);
+        IRouteOptions ForPath(string beforeUrl);
     }
 }

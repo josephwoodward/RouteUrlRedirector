@@ -6,35 +6,35 @@ namespace RouteUrlRedirector.Configuration
     public class RouteRedirectionConfiguration : IRouteRedirectAction, IRouteOptions, IRoutePermanency
     {
         private IDictionary<string, RouteItem> _routes { get; }
-        private string _beforeUrl;
+        private string _beforePath;
 
         public RouteRedirectionConfiguration()
         {
             _routes = new Dictionary<string, RouteItem>();
         }
 
-        public IRouteOptions ForUrl(string beforeUrl)
+        public IRouteOptions ForPath(string beforePath)
         {
-            _beforeUrl = beforeUrl;
-            _routes.Add(_beforeUrl, new RouteItem());
+            _beforePath = beforePath;
+            _routes.Add(_beforePath, new RouteItem());
 
             return this;
         }
 
-        public IRoutePermanency RedirectTo(string afterUrl)
+        public IRoutePermanency RedirectTo(string afterPath)
         {
-            RouteItem rs = _routes[_beforeUrl];
+            RouteItem rs = _routes[_beforePath];
             if (rs != null)
-                _routes[_beforeUrl].afterUrl = afterUrl;
+                _routes[_beforePath].afterUrl = afterPath;
 
             return this;
         }
 
         public IRoutePermanency RedirectTo(Func<string> action)
         {
-            RouteItem rs = _routes[_beforeUrl];
+            RouteItem rs = _routes[_beforePath];
             if (rs != null)
-                _routes[_beforeUrl].Action = action;
+                _routes[_beforePath].Action = action;
 
             return this;
         }
@@ -46,12 +46,12 @@ namespace RouteUrlRedirector.Configuration
 
         public void Permanently()
         {
-            _routes[_beforeUrl].PermanencyType = RoutePermanencyType.Permanently;
+            _routes[_beforePath].PermanencyType = RoutePermanencyType.Permanently;
         }
 
         public void Temporarily()
         {
-            _routes[_beforeUrl].PermanencyType = RoutePermanencyType.Temporarily;
+            _routes[_beforePath].PermanencyType = RoutePermanencyType.Temporarily;
         }
     }
 }
