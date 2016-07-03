@@ -13,7 +13,7 @@ namespace RouteUrlRedirector.Configuration
             _routes = new Dictionary<string, RouteItem>();
         }
 
-        public IRouteOptions ForPath(string beforeUrl)
+        public IRouteOptions ForUrl(string beforeUrl)
         {
             _beforeUrl = beforeUrl;
             _routes.Add(_beforeUrl, new RouteItem());
