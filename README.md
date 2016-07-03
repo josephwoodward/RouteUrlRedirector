@@ -3,6 +3,6 @@
 
     app.UseRouteUrlRedirect(redirect =>
     {
-      redirect.ForPath("/5/old-post-url/").RedirectTo("/new-post-url/").Permanently();
+      redirect.ForPath("/5/legacy-post-url/").RedirectTo("/new-post-url/").Permanently();
       redirect.ForPath("/6/temporary-redirect/").RedirectTo("/temporary-redirect/").Temporarily();
     });
