@@ -25,7 +25,7 @@ namespace RouteUrlRedirector.Configuration
         {
             RouteItem rs = _routes[_beforePath];
             if (rs != null)
-                _routes[_beforePath].afterUrl = afterPath;
+                _routes[_beforePath].afterPath = afterPath;
 
             return this;
         }

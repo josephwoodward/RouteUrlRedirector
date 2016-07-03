@@ -4,7 +4,7 @@ namespace RouteUrlRedirector
 {
     public interface IRouteOptions
     {
-        IRoutePermanency RedirectTo(string afterUrl);
+        IRoutePermanency RedirectTo(string afterPath);
 
         IRoutePermanency RedirectTo(Func<string> action);
     }
