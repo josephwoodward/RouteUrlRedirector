@@ -7,8 +7,8 @@
 
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>bd1ad198-6f54-4075-9e3f-e8fd12d40541</ProjectGuid>
-    <RootNamespace>UrlRedirector</RootNamespace>
+    <ProjectGuid>236fd8ae-0ac7-496b-ad44-1dd66de14ad4</ProjectGuid>
+    <RootNamespace>RouteUrlRedirector.Tests</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>

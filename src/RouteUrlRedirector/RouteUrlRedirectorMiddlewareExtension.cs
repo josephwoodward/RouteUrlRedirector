@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Builder;
 
 namespace RouteUrlRedirector
 {
-    public static class RequestRedirectMiddlewareExtension
+    public static class RouteUrlRedirectorMiddlewareExtension
     {
         public static IApplicationBuilder UseRequestRedirect(this IApplicationBuilder app, Action<IRouteRedirectAction> configureRedirects)
         {
