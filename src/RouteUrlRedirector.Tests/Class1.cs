@@ -11,5 +11,13 @@ namespace RouteUrlRedirector.Tests
 
             Assert.Equal("Hello", res);
         }
+
+        [Fact]
+        public void Test2()
+        {
+            var res = new UseRouteUrlRedirect();
+        }
+
+
     }
 }
