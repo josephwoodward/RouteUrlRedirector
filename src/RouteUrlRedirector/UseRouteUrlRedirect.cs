@@ -18,22 +18,24 @@ namespace RouteUrlRedirector
             _routeConfigurations = routeConfigurations;
         }
 
-        public Task Invoke(HttpContext context)
+        public async Task Invoke(HttpContext context)
         {
             if (_builtRouteItems == null)
             {
                 var config = new RouteRedirectionConfiguration();
                 _routeConfigurations(config);
+/*
+                config.AssertValid();
+*/
                 _builtRouteItems = config.BuildOptions();
+
             }
 
             if (!context.Request.Path.HasValue || !_builtRouteItems.ContainsKey(context.Request.Path.Value))
-                return _next(context);
+                await _next(context);
 
             RouteItem newPath = _builtRouteItems[context.Request.Path.Value];
             context.Response.Redirect(newPath.Result, newPath.PermanencyType == RoutePermanencyType.Permanently);
-
-            return _next(context);
         }
     }
 }

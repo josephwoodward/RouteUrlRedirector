@@ -53,5 +53,15 @@ namespace RouteUrlRedirector.Configuration
         {
             _routes[_beforePath].PermanencyType = RoutePermanencyType.Temporarily;
         }
+
+        public void AssertValid()
+        {
+            var items = new Dictionary<string, string>();
+            foreach (var routeItem in _routes)
+            {
+                if (routeItem.Value.PermanencyType == RoutePermanencyType.NotSet)
+                    throw new ArgumentNullException("Must set call permanency type on configuration key '" + routeItem.Key + "'");
+            }
+        }
     }
 }

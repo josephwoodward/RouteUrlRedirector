@@ -2,6 +2,7 @@
 {
     public enum RoutePermanencyType
     {
+        NotSet,
         Permanently,
         Temporarily
     }
