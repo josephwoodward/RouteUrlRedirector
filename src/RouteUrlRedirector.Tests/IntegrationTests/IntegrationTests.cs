@@ -1,13 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Net;
+﻿using System.Net;
 using System.Net.Http;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.TestHost;
 using Xunit;
 
-namespace RouteUrlRedirector.Tests
+namespace RouteUrlRedirector.Tests.IntegrationTests
 {
     public class IntegrationTests
     {
@@ -18,7 +15,8 @@ namespace RouteUrlRedirector.Tests
             var builder = new WebHostBuilder()
                 .Configure(app => {
                     app.UseRequestRedirect(r => r.ForPath("/old/").RedirectTo("/new/").Permanently());
-            });
+                }
+            );
 
             var server = new TestServer(builder);
 
