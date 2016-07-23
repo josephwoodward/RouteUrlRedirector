@@ -1,8 +1,9 @@
 {
-    "version": "1.0.0-*",
-    "testRunner": "xunit",
+  "version": "1.0.0-*",
+  "testRunner": "xunit",
   "dependencies": {
     "xunit": "2.2.0-beta2-build3300",
+    "Shouldly": "2.8.1",
     "RouteUrlRedirector": "1.0.0",
     "Microsoft.AspNetCore.TestHost": "1.0.0",
     "dotnet-test-xunit": "2.2.0-preview2-build1029"
@@ -10,7 +11,8 @@
   "frameworks": {
     "netcoreapp1.0": {
       "imports": [
-        "dotnet5.4"
+        "dotnet5.6",
+        "dnxcore50"
       ],
       "dependencies": {
         "Microsoft.NETCore.App": {

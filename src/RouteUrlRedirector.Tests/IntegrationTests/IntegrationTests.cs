@@ -3,6 +3,7 @@ using System.Net.Http;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Xunit;
+using Shouldly;
 
 namespace RouteUrlRedirector.Tests.IntegrationTests
 {
@@ -25,8 +26,8 @@ namespace RouteUrlRedirector.Tests.IntegrationTests
             var responseMessage = await server.CreateClient().SendAsync(requestMessage);
 
             // Assert
-            Assert.Equal(HttpStatusCode.MovedPermanently, responseMessage.StatusCode);
-            Assert.Equal(responseMessage.Headers.Location.ToString(), "/new/");
+            responseMessage.StatusCode.ShouldBe(HttpStatusCode.MovedPermanently);
+            responseMessage.Headers.Location.ToString().ShouldBe("/new/");
         }
 
         [Fact]
@@ -45,8 +46,8 @@ namespace RouteUrlRedirector.Tests.IntegrationTests
             var responseMessage = await server.CreateClient().SendAsync(requestMessage);
 
             // Assert
-            Assert.Equal(HttpStatusCode.Redirect, responseMessage.StatusCode);
-            Assert.Equal(responseMessage.Headers.Location.ToString(), "/new/");
+            responseMessage.StatusCode.ShouldBe(HttpStatusCode.Redirect);
+            responseMessage.Headers.Location.ToString().ShouldBe("/new/");
         }
     }
 }
