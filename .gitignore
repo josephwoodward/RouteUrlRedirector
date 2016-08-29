@@ -161,5 +161,7 @@ artifacts/
 project.lock.json
 .vs
 .vscode
-.idea.*
-.idea/
+*/.vscode
+*/.vs
+*/.idea.*
+*/.idea/
