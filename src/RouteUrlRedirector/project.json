@@ -1,5 +1,37 @@
 {
-  "version": "1.0.0-*",
+  "version": "0.1.0-*",
+  "authors": [
+    "Joseph Woodward"
+  ],
+  "description": "A super-simple fluent API for redirecting legacy routes in ASP.NET Core MVC",
+  "title": "Route URL Redirector",
+  "packOptions": {
+    "summary": "A super-simple fluent API for redirecting legacy routes in ASP.NET Core MVC",
+    "licenseUrl": "https://github.com/JosephWoodward/RouteUrlRedirector/blob/master/LICENSE",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/JosephWoodward/RouteUrlRedirector"
+    },
+    "tags": [
+      "seo",
+      "redirect",
+      "mvc",
+      "asp.net core"
+    ],
+    "requireLicenseAcceptance": false,
+    "owners": [
+      "Joseph Woodward"
+    ],
+    "releaseNotes": "Initial release of Route URL Redirector"
+  },
+  "configurations": {
+    "Release": {
+      "buildOptions": {
+        "optimize": true
+      }
+    }
+  },
+
   "dependencies": {
     "Microsoft.AspNetCore.Mvc": "1.0.0",
     "NETStandard.Library": "1.6.0"

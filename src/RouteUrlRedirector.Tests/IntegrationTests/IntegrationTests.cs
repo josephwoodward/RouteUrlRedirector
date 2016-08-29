@@ -14,6 +14,7 @@ namespace RouteUrlRedirector.Tests.IntegrationTests
         {
             // Arrange
             var builder = new WebHostBuilder()
+                .UseContentRoot(System.IO.Directory.GetCurrentDirectory())
                 .Configure(app => {
                     app.UseRequestRedirect(r => r.ForPath("/old/").RedirectTo("/new/").Permanently());
                 }
@@ -35,6 +36,7 @@ namespace RouteUrlRedirector.Tests.IntegrationTests
         {
             // Arrange
             var builder = new WebHostBuilder()
+            .UseContentRoot(System.IO.Directory.GetCurrentDirectory())
                 .Configure(app => {
                     app.UseRequestRedirect(r => r.ForPath("/old/").RedirectTo("/new/").Temporarily());
                 });
