@@ -159,3 +159,7 @@ $RECYCLE.BIN/
 # DNX
 artifacts/
 project.lock.json
+.vs
+.vscode
+.idea.*
+.idea/
