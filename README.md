@@ -6,7 +6,7 @@ A super-simple fluent API for preserving your website's link juice and traffic b
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     {
         ...
-        app.UseRouteUrlRedirect(redirect =>
+        app.UseRequestRedirect(redirect =>
         {
             // Permanently redirect (emits 301 redirect to search engines)
             redirect.ForPath("/5/legacy-post-url/").RedirectTo("/new-post-url/").Permanently();
@@ -21,7 +21,7 @@ A super-simple fluent API for preserving your website's link juice and traffic b
 
 If you need to query a database or other location for a URL then you can also do the following:
 
-    app.UseRouteUrlRedirect(redirect =>
+    app.UseRequestRedirect(redirect =>
     {
         redirect.ForPath("/6/temporary-redirect/").RedirectTo(DeferredQueryDbForPath).Temporarily();
     });
@@ -39,4 +39,4 @@ You can install Route URL Redirector by copying and pasting the following comman
 
 `Install-Package RouteUrlRedirector`
 
-Then all you need to do is call the `app.UseRouteUrlRedirect(...)` extension method in your `Configure` method within `Startup.cs` to add Route URL Redirector to your pipeline and configure your URLs as above.
+Then all you need to do is call the `app.UseRequestRedirect(...)` extension method in your `Configure` method within `Startup.cs` to add Route URL Redirector to your pipeline and configure your URLs as above.
