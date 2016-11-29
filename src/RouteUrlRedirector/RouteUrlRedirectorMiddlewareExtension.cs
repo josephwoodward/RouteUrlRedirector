@@ -12,7 +12,15 @@ namespace RouteUrlRedirector
             if (configureRedirects == null)
                 throw new ArgumentNullException(nameof(configureRedirects));
 
-            return app.UseMiddleware<UseRouteUrlRedirect>(configureRedirects);
+            return app.UseMiddleware<UseRouteUrlRedirectMiddleware>(configureRedirects);
         }
+
+	    public static IApplicationBuilder ForceLowercaseUrl(this IApplicationBuilder app)
+	    {
+		    if (app == null)
+			    throw new ArgumentNullException(nameof(app));
+
+		    return app.UseMiddleware<ForceLowercaseUrlMiddleware>();
+	    }
     }
 }

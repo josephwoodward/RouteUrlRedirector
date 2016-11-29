@@ -56,6 +56,7 @@ namespace RouteUrlRedirector.Configuration
 
         public void AssertValid()
         {
+	        /* Unused, work in progress*/
             var items = new Dictionary<string, string>();
             foreach (var routeItem in _routes)
             {
