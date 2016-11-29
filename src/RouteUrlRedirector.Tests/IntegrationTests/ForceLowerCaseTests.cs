@@ -28,12 +28,12 @@ namespace RouteUrlRedirector.Tests.IntegrationTests
 			var requestMessage = new HttpRequestMessage(new HttpMethod("GET"), beforeUrl);
 			var responseMessage = await server.CreateClient().SendAsync(requestMessage);
 
-			// Assert
-			var path = responseMessage.Headers.Location.ToString();
-			var responseCode = responseMessage.StatusCode;
+            // Assert
+            var responseCode = responseMessage.StatusCode;
+            responseCode.ShouldBe(HttpStatusCode.MovedPermanently);
 
-			responseMessage.StatusCode.ShouldBe(HttpStatusCode.MovedPermanently);
-			responseMessage.Headers.Location.ToString().ShouldBe(afterUrl);
+            var path = responseMessage.Headers.Location.ToString();
+            path.ShouldBe(afterUrl);
 		}
 
 		[Fact]
@@ -54,8 +54,9 @@ namespace RouteUrlRedirector.Tests.IntegrationTests
 			var requestMessage = new HttpRequestMessage(new HttpMethod("GET"), beforeUrl);
 			var responseMessage = await server.CreateClient().SendAsync(requestMessage);
 
-			// Assert
-			responseMessage.Headers.Location.ToString().ShouldBe(beforeUrl);
+            // Assert
+            var path = responseMessage.Headers.Location.ToString();
+            path.ShouldBe(beforeUrl);
 		}
 	}
 }
