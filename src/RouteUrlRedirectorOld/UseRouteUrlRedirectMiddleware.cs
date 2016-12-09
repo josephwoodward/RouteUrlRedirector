@@ -29,10 +29,7 @@ namespace RouteUrlRedirector
             }
 
             if (!context.Request.Path.HasValue || !_builtRouteItems.ContainsKey(context.Request.Path.Value))
-            {
                 await _next(context);
-                return;
-            }
 
             RouteItem newPath = _builtRouteItems[context.Request.Path.Value];
             context.Response.Redirect(newPath.Result, newPath.PermanencyType == RoutePermanencyType.Permanently);

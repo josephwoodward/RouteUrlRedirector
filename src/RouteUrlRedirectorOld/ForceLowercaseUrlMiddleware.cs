@@ -14,17 +14,15 @@ namespace RouteUrlRedirector
 
 		public async Task Invoke(HttpContext context)
 		{
-			if (!ContainsUppercaseChars(context.Request.Path)){
+			if (!ContainsUppercaseChars(context.Request.Path))
 				await _next(context);
-			} else {
-				Redirect(context, context.Request.Path);
-			}			
+
+			Redirect(context, context.Request.Path);
 		}
 
 		private static void Redirect(HttpContext context, string path)
 		{
-			context.Response.StatusCode = StatusCodes.Status301MovedPermanently;
-			context.Response.Redirect(path.ToLower());
+			context.Response.Redirect(path.ToLower(), true);
 		}
 
 		private static bool ContainsUppercaseChars(string input)
