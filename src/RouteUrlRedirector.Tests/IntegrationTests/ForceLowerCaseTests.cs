@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Builder;
 
 namespace RouteUrlRedirector.Tests.IntegrationTests
 {
-	public class ForceLowerCaseTests
+    public class ForceLowerCaseTests
 	{
 		[Fact]
 		public async void Should_Redirect_Permanently()
@@ -50,7 +50,7 @@ namespace RouteUrlRedirector.Tests.IntegrationTests
 
 			var server = new TestServer(builder);
 
-			const string beforeUrl = "/before-URL";
+			const string beforeUrl = "/before-url";
 
 			// Act
 			var requestMessage = new HttpRequestMessage(new HttpMethod("GET"), beforeUrl);
@@ -64,7 +64,7 @@ namespace RouteUrlRedirector.Tests.IntegrationTests
 		private static void HandleMap(IApplicationBuilder app)
 		{
 			app.Run(async context => {
-				context.Response.StatusCode = 302;
+				context.Response.StatusCode = 302; 
 			});
 		}
 	}

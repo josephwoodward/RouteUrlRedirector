@@ -23,8 +23,7 @@ namespace RouteUrlRedirector
 
 		private static void Redirect(HttpContext context, string path)
 		{
-			context.Response.StatusCode = StatusCodes.Status301MovedPermanently;
-			context.Response.Redirect(path.ToLower());
+			context.Response.Redirect(path.ToLower(), true);
 		}
 
 		private static bool ContainsUppercaseChars(string input)

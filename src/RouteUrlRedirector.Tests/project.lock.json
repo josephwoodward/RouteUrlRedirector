@@ -3566,7 +3566,7 @@
           "lib/netstandard1.1/xunit.runner.utility.dotnet.dll": {}
         }
       },
-      "RouteUrlRedirector/0.1.0": {
+      "RouteUrlRedirector/1.0.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
@@ -9549,7 +9549,7 @@
         "xunit.runner.utility.nuspec"
       ]
     },
-    "RouteUrlRedirector/0.1.0": {
+    "RouteUrlRedirector/1.0.2": {
       "type": "project",
       "path": "../RouteUrlRedirector/project.json",
       "msbuildProject": "../RouteUrlRedirector/RouteUrlRedirector.xproj"
@@ -9558,7 +9558,7 @@
   "projectFileDependencyGroups": {
     "": [
       "Microsoft.AspNetCore.TestHost >= 1.0.0",
-      "RouteUrlRedirector >= 0.1.0-*",
+      "RouteUrlRedirector",
       "Shouldly >= 2.8.1",
       "dotnet-test-xunit >= 2.2.0-preview2-build1029",
       "xunit >= 2.2.0-beta2-build3300"

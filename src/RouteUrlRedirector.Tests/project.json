@@ -4,7 +4,9 @@
   "dependencies": {
     "xunit": "2.2.0-beta2-build3300",
     "Shouldly": "2.8.1",
-    "RouteUrlRedirector": "0.1.0-*",
+    "RouteUrlRedirector":{
+      "target":"project"
+    },
     "Microsoft.AspNetCore.TestHost": "1.0.0",
     "dotnet-test-xunit": "2.2.0-preview2-build1029"
   },
