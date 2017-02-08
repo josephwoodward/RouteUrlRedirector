@@ -1,4 +1,4 @@
-﻿namespace RouteUrlRedirector
+﻿namespace RouteUrlRedirector.RedirectMiddleware
 {
     public enum RoutePermanencyType
     {

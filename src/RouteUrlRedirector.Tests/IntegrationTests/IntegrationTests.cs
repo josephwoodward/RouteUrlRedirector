@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.IO;
+using System.Net;
 using System.Net.Http;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
@@ -36,7 +37,7 @@ namespace RouteUrlRedirector.Tests.IntegrationTests
         {
             // Arrange
             var builder = new WebHostBuilder()
-            .UseContentRoot(System.IO.Directory.GetCurrentDirectory())
+            .UseContentRoot(Directory.GetCurrentDirectory())
                 .Configure(app => {
                     app.UseRequestRedirect(r => r.ForPath("/old/").RedirectTo("/new/").Temporarily());
                 });

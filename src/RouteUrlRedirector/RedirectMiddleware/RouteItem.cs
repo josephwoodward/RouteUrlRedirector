@@ -1,14 +1,14 @@
 ﻿using System;
 
-namespace RouteUrlRedirector
+namespace RouteUrlRedirector.RedirectMiddleware
 {
     public class RouteItem
     {
-        public string afterPath { private get; set; }
+        public string AfterPath { private get; set; }
 
         public Func<string> Action { private get; set; }
 
-        public string Result => afterPath ?? Action();
+        public string Result => AfterPath ?? Action();
 
         public RoutePermanencyType PermanencyType { get; set; }
     }

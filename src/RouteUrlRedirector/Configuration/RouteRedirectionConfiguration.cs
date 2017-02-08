@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using RouteUrlRedirector.RedirectMiddleware;
 
 namespace RouteUrlRedirector.Configuration
 {
@@ -25,7 +26,7 @@ namespace RouteUrlRedirector.Configuration
         {
             RouteItem rs = _routes[_beforePath];
             if (rs != null)
-                _routes[_beforePath].afterPath = afterPath;
+                _routes[_beforePath].AfterPath = afterPath;
 
             return this;
         }

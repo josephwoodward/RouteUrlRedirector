@@ -10,6 +10,9 @@
     "Microsoft.AspNetCore.TestHost": "1.0.0",
     "dotnet-test-xunit": "2.2.0-preview2-build1029"
   },
+  "tools": {
+      "Microsoft.DotNet.Watcher.Tools": "1.0.0-preview2-final"
+  },
   "frameworks": {
     "netcoreapp1.0": {
       "imports": [

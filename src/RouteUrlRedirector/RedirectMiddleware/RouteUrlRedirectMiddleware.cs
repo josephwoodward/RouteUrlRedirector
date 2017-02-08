@@ -4,15 +4,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using RouteUrlRedirector.Configuration;
 
-namespace RouteUrlRedirector
+namespace RouteUrlRedirector.RedirectMiddleware
 {
-    internal class UseRouteUrlRedirectMiddleware
+    internal class RouteUrlRedirectMiddleware
     {
         private readonly RequestDelegate _next;
         private readonly Action<RouteRedirectionConfiguration> _routeConfigurations;
         private IDictionary<string, RouteItem> _builtRouteItems;
 
-        public UseRouteUrlRedirectMiddleware(RequestDelegate next, Action<RouteRedirectionConfiguration> routeConfigurations)
+        public RouteUrlRedirectMiddleware(RequestDelegate next, Action<RouteRedirectionConfiguration> routeConfigurations)
         {
             _next = next;
             _routeConfigurations = routeConfigurations;

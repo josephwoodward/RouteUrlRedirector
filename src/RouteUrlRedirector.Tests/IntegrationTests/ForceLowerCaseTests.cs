@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.TestHost;
 using Xunit;
 using Shouldly;
 using Microsoft.AspNetCore.Builder;
+using System.Threading.Tasks;
 
 namespace RouteUrlRedirector.Tests.IntegrationTests
 {
@@ -63,8 +64,9 @@ namespace RouteUrlRedirector.Tests.IntegrationTests
 
 		private static void HandleMap(IApplicationBuilder app)
 		{
-			app.Run(async context => {
-				context.Response.StatusCode = 302; 
+			app.Run(context => {
+				context.Response.StatusCode = 302;
+				return Task.CompletedTask;
 			});
 		}
 	}

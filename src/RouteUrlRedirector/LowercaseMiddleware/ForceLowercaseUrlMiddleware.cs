@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
-namespace RouteUrlRedirector
+namespace RouteUrlRedirector.LowercaseMiddleware
 {
 	internal class ForceLowercaseUrlMiddleware
 	{
@@ -14,7 +14,7 @@ namespace RouteUrlRedirector
 
 		public async Task Invoke(HttpContext context)
 		{
-			if (!ContainsUppercaseChars(context.Request.Path)){
+			if (!ContainsUppercaseChar(context.Request.Path)){
 				await _next(context);
 			} else {
 				Redirect(context, context.Request.Path);
@@ -26,7 +26,7 @@ namespace RouteUrlRedirector
 			context.Response.Redirect(path.ToLower(), true);
 		}
 
-		private static bool ContainsUppercaseChars(string input)
+		private static bool ContainsUppercaseChar(string input)
 		{
 			for (int i = 0; i < input.Length; i++)
 			{

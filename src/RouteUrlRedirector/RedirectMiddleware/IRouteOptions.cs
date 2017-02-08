@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RouteUrlRedirector
+namespace RouteUrlRedirector.RedirectMiddleware
 {
     public interface IRouteOptions
     {
